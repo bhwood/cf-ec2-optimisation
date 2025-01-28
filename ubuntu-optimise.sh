@@ -1,12 +1,12 @@
 #!/bin/bash
 
-echo "Starting Ubuntu memory optimization (Docker-aware)..."
+echo "Starting Ubuntu memory optimisation (Docker-aware)..."
 
-# 1. Optimize system memory settings
+# 1. Optimise system memory settings
 echo "Configuring memory management..."
 cat >> /etc/sysctl.conf << EOF
 
-# Memory Management Optimizations
+# Memory Management Optimisations
 vm.swappiness=10
 vm.vfs_cache_pressure=50
 vm.dirty_ratio=30
@@ -14,7 +14,7 @@ vm.dirty_background_ratio=5
 vm.overcommit_memory=0
 vm.overcommit_ratio=50
 
-# Network optimizations for Docker
+# Network optimisations for Docker
 net.ipv4.ip_forward=1
 net.bridge.bridge-nf-call-iptables=1
 net.core.somaxconn=65535
@@ -41,8 +41,8 @@ root      soft    nproc       unlimited
 root      hard    nproc       unlimited
 EOF
 
-# 3. Optimize journal size
-echo "Optimizing systemd journal..."
+# 3. Optimise journal size
+echo "Optimising systemd journal..."
 mkdir -p /etc/systemd/journald.conf.d/
 cat > /etc/systemd/journald.conf.d/size.conf << EOF
 [Journal]
@@ -55,7 +55,7 @@ EOF
 systemctl restart systemd-journald
 
 # 4. Configure Docker daemon with memory limits
-echo "Optimizing Docker daemon..."
+echo "Optimising Docker daemon..."
 mkdir -p /etc/docker
 cat > /etc/docker/daemon.json << EOF
 {
@@ -87,5 +87,5 @@ journalctl --vacuum-size=100M
 # Restart Docker to apply changes
 systemctl restart docker
 
-echo "Optimization complete! System needs to be rebooted to apply all changes."
+echo "Optimisation complete! System needs to be rebooted to apply all changes."
 echo "Please run: sudo reboot"
