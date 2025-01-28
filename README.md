@@ -32,7 +32,7 @@ This script is designed to optimise memory usage on Ubuntu systems, with additio
 ### Prerequisites
 - The script **must be run as root** or with `sudo`:
   ```bash
-  sudo ./ubuntu_memory_optimise.sh
+  sudo ./ubuntu_optimise.sh
   ```
 
 ### Steps Performed
