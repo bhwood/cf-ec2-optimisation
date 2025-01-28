@@ -89,8 +89,7 @@ The script sets up a cron job at `/etc/cron.daily/docker-cleanup` to:
 ---
 
 ## Tested On
-- Ubuntu 18.04+
-- Ubuntu 20.04+
+- Ubuntu 24.04+
 - Docker Engine v19.03+  
 
 ---
